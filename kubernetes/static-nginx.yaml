@@ -15,7 +15,7 @@ spec:
       containers:
       - name: nginx
         imagePullPolicy: IfNotPresent
-        image: ghcr.io/dantehillen/fronte:latest
+        image: ghcr.io/dantehillen/frontend:latest
         ports:
           - containerPort: 80
             name: http-web-svc

@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: chat
-          image: ghcr.io/dantehillen/image:latest
+          image: ghcr.io/dantehillen/chat:latest
           ports:
           - containerPort: 3000
 ---

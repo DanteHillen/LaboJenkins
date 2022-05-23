@@ -1,15 +1,15 @@
-FROM node
+FROM node:16-alpine
 
-    WORKDIR /home/node/app
+WORKDIR /app
 
-    COPY *.js /home/node/app/
 
-    COPY package*.json /home/node/app/
+COPY --chown=node:node ./package* ./
 
-    RUN ["npm", "install"]
+RUN npm ci --production
 
-    ENV NODE_ENV=production
+COPY --chown=node:node ./*.js ./
 
-    CMD ["node", "index.js"]
+USER node
+EXPOSE 3000
 
-    EXPOSE 3000
+CMD [ "node", "index.js" ]
